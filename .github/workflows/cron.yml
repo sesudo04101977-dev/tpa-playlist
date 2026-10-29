@@ -1,17 +1,15 @@
-yaml
 name: Atualizar Playlist TPA
 
 on:
   schedule:
-    # Corre automaticamente a cada 45 minutos
     - cron: '*/45 * * * *'
-  workflow_dispatch: # Permite-te carregar num botão para atualizar manualmente sempre que quiseres
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Descarregar código do repositório
+    - name: Descarregar codigo do repositorio
       uses: actions/checkout@v3
 
     - name: Configurar o Python
@@ -19,7 +17,7 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Instalar dependências
+    - name: Instalar dependencias
       run: pip install requests
 
     - name: Executar o Script de captura de Tokens
